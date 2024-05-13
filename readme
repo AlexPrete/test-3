@@ -21,34 +21,14 @@ function startQuiz() {
     if (name !== '') {
         nameEntryContainer.classList.add('hidden');
         quizContainer.classList.remove('hidden');
-        //fetchQuestions();
-        registerParticipant(name);
+        fetchQuestions();
     } else {
         alert('Please enter your name to start the quiz.');
     }
 }
 
 
-// Funzione per registrare il partecipante sul server
-function registerParticipant(name) {
-    // Esegui una richiesta AJAX per registrare il partecipante sul server PHP
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'server.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            const response = JSON.parse(xhr.responseText);
-            if (response.success) {
-                // Il partecipante è stato registrato con successo, puoi iniziare il quiz
-                fetchQuestions();
-            } else {
-                // Si è verificato un errore durante la registrazione del partecipante
-                alert(response.message);
-            }
-        }
-    };
-    xhr.send(`action=registerParticipant&name=${encodeURIComponent(name)}`);
-}
+
 
 
 
