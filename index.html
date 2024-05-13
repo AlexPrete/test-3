@@ -1,0 +1,38 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Multiplayer Quiz</h1>
+    <div id="name-entry">
+        <input type="text" id="participant-name" placeholder="Enter your name">
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <div id="waiting-message" class="hidden">Waiting for players...</div>
+
+    <div id="quiz-container" class="hidden">
+        <div id="question-counter"></div>
+        <div id="question-container">
+            <p id="question"></p>
+            <div id="answers"></div>
+        </div>
+        <div id="timer"></div>
+    </div>
+
+    <div id="leaderboard-container" class="hidden">
+        <h2>Leaderboard</h2>
+        <ol id="leaderboard-list"></ol>
+        <button onclick="startNewGame()">New Game</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
